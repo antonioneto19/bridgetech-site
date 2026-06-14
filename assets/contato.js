@@ -1,8 +1,9 @@
 (function(){
-  // Após criar o e-mail contato@bridgetech.ia.br, gere uma chave GRATUITA em https://web3forms.com
-  // (informando esse e-mail como destino) e cole entre as aspas abaixo.
-  // Enquanto estiver vazia, o formulário continua enviando pelo WhatsApp automaticamente.
-  var WEB3FORMS_ACCESS_KEY = '0c08e9cc-01f3-45df-94c3-4ea3c9c0b159';
+  // DESTINO PRINCIPAL: chave Web3Forms vinculada a contato@bridgetech.ia.br
+  // (contato@ é encaminhado para antonio@liderancatech.com via ImprovMX).
+  var WEB3FORMS_ACCESS_KEY = '77778dfd-f430-4188-9a51-e6aa4b795dee';
+  // CÓPIA (CC): o antonio@ recebe uma cópia direta de cada lead, além do destino da chave.
+  var CC_EMAIL = 'antonio@liderancatech.com';
   var WHATS = '5581971171007';
   var f=document.getElementById('contactForm'),note=document.getElementById('formNote');
   if(!f)return;
@@ -36,6 +37,7 @@
         subject:'Novo contato pelo site — '+nome,
         from_name:'Site BRIDGE',
         replyto:email,
+        ccemail:CC_EMAIL,
         botcheck:false,
         Nome:nome, Email:email, WhatsApp:f.tel.value, 'Empresa/Órgão':f.empresa.value,
         Interesse:f.interesse.value, Mensagem:msg
