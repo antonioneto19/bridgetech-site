@@ -1,0 +1,35 @@
+# BRIDGE Tecnologia e Consultoria
+
+> Consultoria premium de IA aplicada e software sob medida para empresas (B2B) e governo (B2G). A BRIDGE projeta e implanta agentes de IA, automações, integrações entre sistemas, visão computacional e plataformas sob medida — conectando dados, pessoas e processos com segurança e resultado mensurável. Base em Natal/Rio Grande do Norte, Brasil, com filial em Recife/Pernambuco e atuação nacional.
+
+Slogan: "Tecnologia aplicada com inteligência, segurança e resultado."
+
+## Serviços
+- **Consultoria em IA aplicada**: diagnóstico de maturidade, mapa de oportunidades e ROI, roadmap de adoção de IA e provas de conceito (PoC).
+- **Agentes e assistentes de IA**: agentes e assistentes treinados sob medida, cada um responsável por tarefas específicas e desenhado para se tornar um superespecialista (atendimento, triagem, classificação e execução de rotinas).
+- **Automações e integrações entre sistemas**: conexão de ERP, CRM, planilhas, bancos de dados e APIs; pipelines de dados confiáveis, orquestração de fluxos, webhooks e sincronização em tempo real.
+- **Visão computacional**: inspeção visual automatizada, detecção e contagem de objetos, controle de qualidade em linha e detecção precoce de anomalias.
+- **Software sob medida**: plataformas e portais web, dashboards, command centers, sistemas internos e back-ends — com propriedade total do código para o cliente.
+- **Transformação digital B2B/B2G**: modernização de operações de empresas e do setor público, governança, segurança da informação e capacitação de equipes.
+
+## Setores atendidos
+Indústria e manufatura, construção civil, varejo e serviços, setor público/governo, saúde, logística, segurança e monitoramento, educação, agronegócio e financeiro.
+
+## Páginas
+- [Início](https://www.bridgetech.ia.br/): apresentação, capacidades e visão geral.
+- [Serviços](https://www.bridgetech.ia.br/servicos.html): detalhamento das seis frentes de serviço.
+- [Sobre](https://www.bridgetech.ia.br/sobre.html): quem somos, princípios e missão.
+- [Cases](https://www.bridgetech.ia.br/cases.html): projetos e indicadores de resultado.
+- [Contato](https://www.bridgetech.ia.br/contato.html): formulário e canais diretos.
+- [Política de Privacidade](https://www.bridgetech.ia.br/privacidade.html): tratamento de dados pessoais e conformidade com a LGPD.
+
+## Contato
+- WhatsApp: +55 81 9.7117-1007 (https://wa.me/5581971171007)
+- E-mail: contato@bridgetech.ia.br
+- Site: https://www.bridgetech.ia.br
+- Sede: Natal, Rio Grande do Norte — Rua Joaquim Victor de Holland, 1864, Lagoa Nova, CEP 59062-460.
+- Filial: Recife, Pernambuco.
+- Atuação: todo o Brasil.
+
+## Observações
+Conteúdo em português do Brasil (pt-BR). Métricas exibidas em "Cases" são ilustrativas do portfólio; referências detalhadas disponíveis sob consulta.

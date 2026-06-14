@@ -1,0 +1,39 @@
+# robots.txt — BRIDGE Tecnologia e Consultoria
+# Conteúdo público: liberado para indexação por buscadores e por agentes de IA / LLM.
+
+User-agent: *
+Allow: /
+
+# Crawlers de IA / mecanismos de busca generativa explicitamente bem-vindos
+# (o site deseja ser citado por assistentes e buscas baseadas em LLM).
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://www.bridgetech.ia.br/sitemap.xml
