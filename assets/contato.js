@@ -35,6 +35,7 @@
         access_key:WEB3FORMS_ACCESS_KEY,
         subject:'Novo contato pelo site — '+nome,
         from_name:'Site BRIDGE',
+        replyto:email,
         botcheck:false,
         Nome:nome, Email:email, WhatsApp:f.tel.value, 'Empresa/Órgão':f.empresa.value,
         Interesse:f.interesse.value, Mensagem:msg
