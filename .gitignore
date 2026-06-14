@@ -1,0 +1,15 @@
+# Vercel
+.vercel
+
+# Dependências (caso futuramente haja build)
+node_modules/
+
+# Logs e temporários
+*.log
+.DS_Store
+Thumbs.db
+
+# Variáveis de ambiente
+.env
+.env.local
+.env.*.local

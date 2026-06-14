@@ -1,13 +1,16 @@
 name: Ruflo Multi-Agent CI/CD - Bridge Site
 
+# NOTA: gatilhos automáticos (push/PR/schedule) desativados para evitar execuções
+# que falham por falta dos secrets RUFLO_API_KEY / ANTHROPIC_API_KEY.
+# Para reativar, configure os secrets no repositório e descomente os gatilhos abaixo.
+# O deploy de produção é feito pela Vercel (integração Git), independente deste workflow.
 on:
-  push:
-    branches: [main, develop]
-  pull_request:
-    branches: [main]
-  schedule:
-    # Roda todo dia útil às 08:00 BRT (11:00 UTC)
-    - cron: '0 11 * * 1-5'
+  # push:
+  #   branches: [main, develop]
+  # pull_request:
+  #   branches: [main]
+  # schedule:
+  #   - cron: '0 11 * * 1-5'   # todo dia útil às 08:00 BRT (11:00 UTC)
   workflow_dispatch:
     inputs:
       agent:

@@ -13,10 +13,15 @@
 
 **Projeto**: Site institucional da Bridge Tecnologia e Consultoria LTDA  
 **Repositório**: `antonioneto19/bridgetech-site`  
-**Stack**: Next.js + Tailwind CSS + Netlify  
-**Deploy**: Netlify (branch `main` → produção automática)  
+**Stack**: HTML + CSS + JavaScript (site estático, sem build)  
+**Deploy**: Vercel (integração Git — branch `main` → produção automática)  
+**Domínio**: www.bridgetech.ia.br (DNS no Registro.br)  
+**E-mail**: encaminhamento via ImprovMX (contato@ / antonio@ / catch-all → antonio@liderancatech.com)  
+**Formulário**: Web3Forms (destino contato@bridgetech.ia.br) + fallback WhatsApp  
 **Objetivo**: Presença institucional da Bridge — portfólio, serviços, contato, credibilidade para clientes e parceiros  
 **Prioridade Ruflo**: 🔴 CRÍTICA (presença institucional da empresa)
+
+> ℹ️ Documentação completa da infraestrutura: ver `README.md`.
 
 ---
 
@@ -49,15 +54,16 @@ orquestrador: ruflo-workspace
 
 ```yaml
 frontend:
-  framework: Next.js (App Router)
-  styling: Tailwind CSS
-  linguagem: TypeScript
+  framework: nenhum (HTML/CSS/JS estatico)
+  styling: CSS puro (assets/bridge.css)
+  linguagem: JavaScript (vanilla)
   assets: imagens otimizadas, fontes Google
 
 deploy:
-  plataforma: Netlify
+  plataforma: Vercel
   branch_producao: main
-  ci_cd: GitHub Actions (netlify.yml)
+  ci_cd: integracao Git nativa da Vercel (auto-deploy a cada push)
+  config: vercel.json (framework null, output raiz, headers de seguranca)
   
 padroes:
   seo: meta tags, Open Graph, sitemap.xml
