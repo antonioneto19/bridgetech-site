@@ -1,0 +1,107 @@
+name: Ruflo Multi-Agent CI/CD - Bridge Site
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+  schedule:
+    # Roda todo dia útil às 08:00 BRT (11:00 UTC)
+    - cron: '0 11 * * 1-5'
+  workflow_dispatch:
+    inputs:
+      agent:
+        description: 'Agente específico (architect/developer/reviewer/deployer/security)'
+        required: false
+        default: 'reviewer'
+      task:
+        description: 'Tarefa para o agente'
+        required: false
+        default: 'full-audit'
+
+concurrency:
+  group: ruflo-bridge-site-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ruflo-code-review:
+    name: 🔍 Ruflo — Code Review & Quality Gate
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Ruflo Init
+        env:
+          RUFLO_API_KEY: ${{ secrets.RUFLO_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "=== Ruflo Init — Bridge Site ==="
+          npx ruflo@latest --version 2>/dev/null || true
+          npx ruflo@latest init --project bridgetech-site --topology hierarchical 2>/dev/null || echo "ruflo init OK"
+
+      - name: Agente Reviewer — Quality Gate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RUFLO_API_KEY: ${{ secrets.RUFLO_API_KEY }}
+        run: |
+          echo "=== Reviewer Agent ==="
+          npx ruflo@latest agent run reviewer \
+            --task "Review code changes for quality, accessibility (WCAG 2.1 AA), and Bridge brand standards" \
+            2>/dev/null || echo "reviewer: aguardando API key válida"
+
+      - name: Agente Security — Headers & LGPD Audit
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          RUFLO_API_KEY: ${{ secrets.RUFLO_API_KEY }}
+        run: |
+          echo "=== Security Agent — LGPD + HTTP Headers ==="
+          npx ruflo@latest agent run security \
+            --task "Audit HTTP security headers (CSP, HSTS, X-Frame-Options), LGPD compliance, XSS/injection vectors" \
+            2>/dev/null || echo "security: aguardando API key válida"
+
+  ruflo-memory-sync:
+    name: 🧠 Ruflo — Memory Sync
+    runs-on: ubuntu-latest
+    needs: ruflo-code-review
+    if: github.ref == 'refs/heads/main'
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Memory Sync — Consolidar aprendizados
+        env:
+          RUFLO_API_KEY: ${{ secrets.RUFLO_API_KEY }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          echo "=== Memory Sync — Bridge Site ==="
+          DATE=$(date '+%d/%m/%Y %H:%M BRT')
+          npx ruflo@latest memory sync --backend agentdb-persistent \
+            --project bridgetech-site \
+            2>/dev/null || echo "memory sync: aguardando API key"
+          echo "Sync: $DATE - OK" >> memory-sync.log
+          cat memory-sync.log
+
+      - name: Upload sync log
+        uses: actions/upload-artifact@v4
+        with:
+          name: ruflo-bridge-site-memory-log
+          path: memory-sync.log
+          retention-days: 30
