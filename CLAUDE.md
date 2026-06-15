@@ -6,6 +6,11 @@
 
 > **INSTRUÇÃO**: Este arquivo é lido pelo Ruflo MCP a cada sessão Claude neste repositório.
 > Referência ao orquestrador central: `antonioneto19/ruflo-workspace`
+>
+> **NOTA (CI/CD)**: O workflow do GitHub Actions deste repositório NÃO usa mais agentes Ruflo.
+> O CI agora faz apenas validação determinística do site (`.github/workflows/validacao-site.yml`):
+> rápido, gratuito e sem dependência de chaves de API. O deploy de produção é feito pela Vercel.
+> O uso do Ruflo MCP descrito abaixo continua válido para sessões locais do Claude Code.
 
 ---
 

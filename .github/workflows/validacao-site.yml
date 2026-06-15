@@ -1,0 +1,72 @@
+name: Validacao do Site - Bridge
+
+# Pipeline de qualidade do site institucional BRIDGE.
+# - O DEPLOY de producao e feito pela Vercel (integracao Git), independente deste workflow.
+# - Este workflow faz validacao deterministica do site (paginas, assets, headers).
+# - Rapido, gratuito e confiavel: nao depende de chaves de API nem de agentes de IA.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  schedule:
+    - cron: '0 11 * * 1-5'   # dias uteis as 08:00 BRT (11:00 UTC)
+  workflow_dispatch:
+
+concurrency:
+  group: validacao-bridge-site-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate-site:
+    name: ✅ Validacao do Site
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Verificar paginas HTML e arquivos essenciais
+        run: |
+          echo "=== Verificando paginas HTML ==="
+          fail=0
+          for f in index.html servicos.html sobre.html cases.html contato.html privacidade.html 404.html; do
+            if [ -f "$f" ]; then echo "OK  $f"; else echo "ERRO  $f ausente"; fail=1; fi
+          done
+          echo "=== Verificando arquivos de config e SEO ==="
+          for f in robots.txt sitemap.xml vercel.json assets/bridge.css assets/bridge.js assets/contato.js; do
+            if [ -f "$f" ]; then echo "OK  $f"; else echo "ERRO  $f ausente"; fail=1; fi
+          done
+          exit $fail
+
+      - name: Validar JSON do vercel.json
+        run: |
+          echo "=== Validando vercel.json ==="
+          python3 -c "import json; json.load(open('vercel.json')); print('vercel.json: JSON valido')"
+
+      - name: Conferir headers de seguranca no vercel.json
+        run: |
+          echo "=== Conferindo headers de seguranca ==="
+          fail=0
+          for h in "Content-Security-Policy" "Strict-Transport-Security" "X-Frame-Options" "X-Content-Type-Options"; do
+            if grep -q "$h" vercel.json; then echo "OK  $h"; else echo "ERRO  $h ausente"; fail=1; fi
+          done
+          exit $fail
+
+      - name: Verificar assets referenciados no HTML
+        run: |
+          echo "=== Verificando assets referenciados (src/href locais) ==="
+          fail=0
+          refs=$(grep -rhoE '(src|href)="(assets/[^"?#]+)"' *.html | sed -E 's/.*"(assets\/[^"?#]+)".*/\1/' | sort -u)
+          for r in $refs; do
+            if [ -f "$r" ]; then echo "OK  $r"; else echo "ERRO  referencia quebrada: $r"; fail=1; fi
+          done
+          exit $fail
+
+      - name: Resumo
+        if: always()
+        run: echo "Validacao do site concluida. Deploy de producao e feito pela Vercel (integracao Git)."
