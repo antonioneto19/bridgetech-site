@@ -88,7 +88,7 @@ Arquivo: `assets/contato.js` (página `contato.html`).
 - Chave de acesso vinculada ao destino **`contato@bridgetech.ia.br`**: `77778dfd-f430-4188-9a51-e6aa4b795dee`.
 - `ccemail`: envia cópia direta para `antonio@liderancatech.com`.
 - `replyto`: definido com o e-mail do lead (responde direto ao cliente).
-- **Fallback WhatsApp:** se a chave estiver vazia, o formulário redireciona para o WhatsApp `(81) 9.7117-1007`.
+- **Fallback WhatsApp:** se a chave estiver vazia, o formulário redireciona para o WhatsApp `(81) 9.7118-1007`.
 - Proteção anti-spam: honeypot (`botcheck`) + validação de campos + consentimento LGPD obrigatório.
 
 Fluxo: formulário → `contato@bridgetech.ia.br` (encaminha p/ Gmail) + cópia para `antonio@`.
