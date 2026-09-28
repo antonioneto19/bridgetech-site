@@ -11,6 +11,10 @@ Slogan: "Tecnologia aplicada com inteligência, segurança e resultado."
 - **Visão computacional**: inspeção visual automatizada, detecção e contagem de objetos, controle de qualidade em linha e detecção precoce de anomalias.
 - **Software sob medida**: plataformas e portais web, dashboards, command centers, sistemas internos e back-ends — com propriedade total do código para o cliente.
 - **Transformação digital B2B/B2G**: modernização de operações de empresas e do setor público, governança, segurança da informação e capacitação de equipes.
+- **Governança de IA & Workshops de Capacitação**: diagnóstico de riscos, política de uso de IA, adequação à LGPD e workshops práticos para equipes usarem IA com produtividade e segurança, sem expor dados sensíveis.
+
+## Governança de IA e LGPD
+Empresas sem cultura estruturada de uso de IA correm riscos reais: colaboradores expõem dados sensíveis (da empresa e de clientes) em ferramentas de IA públicas, cada equipe usa a tecnologia de um jeito diferente e sem padronização, e vazamentos de dados podem gerar multas de até 2% do faturamento (limitado a R$ 50 milhões por infração) sob a LGPD (Lei 13.709/2018). A BRIDGE ajuda empresas a adotar IA com produtividade e segurança: diagnóstico de riscos, política de uso de IA e workshops práticos de capacitação para equipes.
 
 ## Setores atendidos
 Indústria e manufatura, construção civil, varejo e serviços, setor público/governo, saúde, logística, segurança e monitoramento, educação, agronegócio e financeiro.
