@@ -20,7 +20,7 @@ Empresas sem cultura estruturada de uso de IA correm riscos reais: colaboradores
 Indústria e manufatura, construção civil, varejo e serviços, setor público/governo, saúde, logística, segurança e monitoramento, educação, agronegócio e financeiro.
 
 ## FORGER
-O FORGER é a plataforma de governança de IA da empresa unificada Bridge e Ycodify. A fusão já está formalizada. Data, razão social e demais detalhes da fusão não estão publicados. O modelo de domínio descreve o negócio e a plataforma executa, com agentes de IA acompanhados por especialistas. Antes de uma ação de alto impacto, a governança Glass Box mostra qual agente pediu, qual regra se aplica e qual é o impacto, e só executa depois de validação humana ou por política. A hospedagem e a escala são gerenciadas.
+O FORGER é a plataforma de governança de IA da empresa unificada Bridge e Ycodify. O modelo de domínio descreve o negócio e a plataforma executa, com agentes de IA acompanhados por especialistas. Antes de uma ação de alto impacto, a governança Glass Box mostra qual agente pediu, qual regra se aplica e qual é o impacto, e só executa depois de validação humana ou por política. A hospedagem e a escala são gerenciadas.
 
 Provedor de nuvem, modelos de IA, certificações, acordo de nível de serviço e nomes oficiais de módulos não estão publicados. A página também não afirma exclusividade de mercado. Para conversar com a equipe, o caminho é o WhatsApp ou o contato do site.
 
