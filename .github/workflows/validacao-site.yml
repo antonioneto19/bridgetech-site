@@ -32,7 +32,7 @@ jobs:
         run: |
           echo "=== Verificando paginas HTML ==="
           fail=0
-          for f in index.html servicos.html sobre.html cases.html contato.html newsletter.html privacidade.html 404.html; do
+          for f in index.html servicos.html sobre.html cases.html forger.html contato.html newsletter.html privacidade.html 404.html; do
             if [ -f "$f" ]; then echo "OK  $f"; else echo "ERRO  $f ausente"; fail=1; fi
           done
           echo "=== Verificando arquivos de config e SEO ==="
