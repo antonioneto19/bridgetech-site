@@ -228,32 +228,38 @@
   document.querySelectorAll('[data-year]').forEach(el=>el.textContent = new Date().getFullYear());
 
   /* ---------- cookie / LGPD consent banner ---------- */
-  function mountVercelAnalytics(){
-    if(document.querySelector('script[data-vercel-insights-active]')) return;
-    window.va = window.va || function(){ (window.vaq = window.vaq || []).push(arguments); };
-    var holder = document.querySelector('script[data-src="/_vercel/insights/script.js"]');
+  /* Ponto único do GA4. Carregar só depois do Aceitar (bridge_cookie_ok).
+     Ainda não há ID G-. Quando existir, descomentar e incluir
+     https://www.googletagmanager.com e https://www.google-analytics.com
+     no script-src e no connect-src do vercel.json.
+  function loadGa4(){
+    var id = 'G-XXXXXXXX';
     var s = document.createElement('script');
-    s.defer = true;
-    s.src = '/_vercel/insights/script.js';
-    s.setAttribute('data-vercel-insights-active','');
-    if(holder && holder.parentNode) holder.parentNode.insertBefore(s, holder);
-    else document.head.appendChild(s);
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){window.dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', id);
   }
+  */
+  function loadGa4(){}
   try{
     if(localStorage.getItem('bridge_cookie_ok')==='1'){
-      mountVercelAnalytics();
+      loadGa4();
     }else{
       const b=document.createElement('div');
       b.className='cookie-banner';
       b.setAttribute('role','dialog');
       b.setAttribute('aria-label','Aviso de cookies e privacidade');
-      b.innerHTML='<p>Utilizamos apenas o necessário para o site funcionar. Ao aceitar, também medimos a visita de forma anônima, sem cookies de rastreamento. Respeitamos a sua privacidade de acordo com a <strong>LGPD</strong> (Lei nº 13.709/2018). <a href="privacidade.html" style="color:#7fe6ff;text-decoration:underline">Política de Privacidade</a>.</p>'+
+      b.innerHTML='<p>Usamos o necessário para o site funcionar. <a href="privacidade.html">Política</a></p>'+
         '<div class="ck-actions"><button type="button" class="btn btn-primary" data-cookie-accept>Aceitar</button></div>';
       document.body.appendChild(b);
       requestAnimationFrame(()=>requestAnimationFrame(()=>b.classList.add('show')));
       b.querySelector('[data-cookie-accept]').addEventListener('click',()=>{
         try{ localStorage.setItem('bridge_cookie_ok','1'); }catch(e){}
-        mountVercelAnalytics();
+        loadGa4();
         b.classList.remove('show');
         setTimeout(()=>b.remove(),520);
       });
