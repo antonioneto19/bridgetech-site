@@ -6,6 +6,19 @@
   "outputDirectory": ".",
   "cleanUrls": false,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "^bridgetech\\.ia\\.br$"
+        }
+      ],
+      "destination": "https://www.bridgetech.ia.br/:path*",
+      "permanent": true
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
