@@ -228,23 +228,30 @@
   document.querySelectorAll('[data-year]').forEach(el=>el.textContent = new Date().getFullYear());
 
   /* ---------- cookie / LGPD consent banner ---------- */
-  /* Ponto único do GA4. Carregar só depois do Aceitar (bridge_cookie_ok).
-     Ainda não há ID G-. Quando existir, descomentar e incluir
-     https://www.googletagmanager.com e https://www.google-analytics.com
-     no script-src e no connect-src do vercel.json.
+  /* Ponto único do GA4. Carrega só depois do Aceitar (bridge_cookie_ok).
+     O config padrão do gtag envia a URL atual, então os UTMs da página entram na medição. */
+  var GA4_ID = 'G-WDKYKB0JBL';
   function loadGa4(){
-    var id = 'G-XXXXXXXX';
+    if(window.__bridgeGa4) return;
+    window.__bridgeGa4 = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function(){ window.dataLayer.push(arguments); };
+    window.gtag('js', new Date());
+    window.gtag('config', GA4_ID);
     var s = document.createElement('script');
     s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + id;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
     document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){window.dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', id);
   }
-  */
-  function loadGa4(){}
+  document.addEventListener('click', function(ev){
+    var el = ev.target;
+    var a = el && el.closest ? el.closest('a[href*="wa.me/"]') : null;
+    if(!a || typeof window.gtag !== 'function') return;
+    window.gtag('event', 'whatsapp_click', {
+      page_location: window.location.href,
+      transport_type: 'beacon'
+    });
+  });
   try{
     if(localStorage.getItem('bridge_cookie_ok')==='1'){
       loadGa4();
