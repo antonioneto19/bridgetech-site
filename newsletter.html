@@ -131,24 +131,28 @@
       <div class="reveal">
         <div class="eyebrow">Inscrição</div>
         <h2 class="h-section" style="font-size:clamp(26px,3vw,40px)">Receba a Ponte IA no seu e-mail.</h2>
-        <p class="lead" style="margin-top:18px">Semanal, direta e sem enchimento. Você autoriza o envio e pode sair da lista quando quiser, escrevendo para contato@bridgetech.ia.br.</p>
-        <p class="nl-pending">A ferramenta de e-mail ainda não está definida. Por enquanto, o formulário não envia seus dados a lugar nenhum.</p>
+        <p class="lead" style="margin-top:18px">Semanal, direta e sem enchimento. Você autoriza o envio e pode sair da lista quando quiser, respondendo SAIR a qualquer edição ou escrevendo para contato@bridgetech.ia.br.</p>
+        <p class="nl-pending">Depois da inscrição, você recebe um e-mail de boas-vindas enviado pela nossa equipe a partir de bridgetechia.br@gmail.com. Se não foi você quem se inscreveu, basta responder SAIR.</p>
       </div>
 
-      <form class="contact-form reveal d1" id="newsletterForm" action="#" method="post" novalidate>
+      <form class="contact-form reveal d1" id="newsletterForm" novalidate>
         <div class="field">
-          <label for="nome">Nome <span class="opt">(opcional)</span></label>
-          <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar">
+          <label for="nome">Nome</label>
+          <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como podemos te chamar" required>
         </div>
         <div class="field">
           <label for="email">E-mail</label>
           <input id="email" name="email" type="email" autocomplete="email" inputmode="email" placeholder="voce@email.com" required>
         </div>
+        <div class="field">
+          <label for="organizacao">Organização <span class="opt">(opcional)</span></label>
+          <input id="organizacao" name="organizacao" type="text" autocomplete="organization" placeholder="Empresa ou órgão">
+        </div>
         <div class="hp-field" aria-hidden="true">
           <label for="botcheck">Não preencha este campo</label>
           <input id="botcheck" name="botcheck" type="text" tabindex="-1" autocomplete="off">
         </div>
-        <label class="lgpd-consent"><input type="checkbox" name="consent" required><span>Autorizo a BRIDGE a usar meu e-mail — e meu nome, se eu informar — para enviar a newsletter Ponte IA, conforme a <a href="privacidade.html">Política de Privacidade</a>. Posso revogar este consentimento quando quiser.</span></label>
+        <label class="lgpd-consent"><input type="checkbox" name="consent" required><span data-consent-text>Autorizo a BRIDGE a usar meu nome, meu e-mail e, se eu informar, minha organização para me enviar a newsletter Ponte IA por e-mail, conforme a <a href="privacidade.html#newsletter">Política de Privacidade</a>. Posso cancelar quando quiser respondendo SAIR a qualquer edição ou escrevendo para contato@bridgetech.ia.br.</span></label>
         <button type="submit" class="btn btn-primary" style="width:100%;font-size:15.5px;padding:17px">Quero receber a Ponte IA <span class="ar">→</span></button>
         <p class="form-note" id="newsletterNote" role="status" aria-live="polite"></p>
       </form>
@@ -230,6 +234,7 @@
     .contact-form{padding:26px}
   }
 </style>
+<script src="assets/forms-comum.js"></script>
 <script src="assets/newsletter.js"></script>
 <script src="assets/bridge.js"></script>
 </body>
