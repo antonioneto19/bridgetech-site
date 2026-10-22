@@ -11,27 +11,27 @@ Slogan: "Tecnologia aplicada com inteligência, segurança e resultado."
 - **Visão computacional**: inspeção visual automatizada, detecção e contagem de objetos, controle de qualidade em linha e detecção precoce de anomalias.
 - **Software sob medida**: plataformas e portais web, dashboards, command centers, sistemas internos e back-ends — com propriedade total do código para o cliente.
 - **Transformação digital B2B/B2G**: modernização de operações de empresas e do setor público, governança, segurança da informação e capacitação de equipes.
-- **Governança de IA & Workshops de Capacitação**: diagnóstico de riscos, política de uso de IA, adequação à LGPD e workshops práticos para equipes usarem IA com produtividade e segurança, sem expor dados sensíveis.
+- **Governança de IA & Workshops de Capacitação**: diagnóstico de riscos, política de uso de IA, adequação à LGPD e workshops para empresas criarem uma cultura de uso de IA entre os colaboradores, com segurança dos dados sensíveis.
 
 ## Governança de IA e LGPD
-Empresas sem cultura estruturada de uso de IA correm riscos reais: colaboradores expõem dados sensíveis (da empresa e de clientes) em ferramentas de IA públicas, cada equipe usa a tecnologia de um jeito diferente e sem padronização, e vazamentos de dados podem gerar multas de até 2% do faturamento (limitado a R$ 50 milhões por infração) sob a LGPD (Lei 13.709/2018). A BRIDGE ajuda empresas a adotar IA com produtividade e segurança: diagnóstico de riscos, política de uso de IA e workshops práticos de capacitação para equipes.
+Para empresas que precisam criar uma cultura de uso de IA entre os colaboradores e proteger os dados sensíveis que circulam na operação. Sem regras claras, cada equipe usa a IA de um jeito e dados da empresa e de clientes acabam em ferramentas públicas, com risco à LGPD. A Bridge estrutura a política de uso, os controles de segurança e workshops práticos para a equipe usar IA com produtividade e segurança.
 
 ## Setores atendidos
 Indústria e manufatura, construção civil, varejo e serviços, setor público/governo, saúde, logística, segurança e monitoramento, educação, agronegócio e financeiro.
 
-## FORGER
-O FORGER é a plataforma de governança de IA da empresa unificada Bridge e Ycodify. O modelo de domínio descreve o negócio e a plataforma executa, com agentes de IA acompanhados por especialistas. Antes de uma ação de alto impacto, a governança Glass Box mostra qual agente pediu, qual regra se aplica e qual é o impacto, e só executa depois de validação humana ou por política. A hospedagem e a escala são gerenciadas.
+## Ycodify
+A Ycodify é a plataforma de governança de IA da empresa unificada Bridge e Ycodify. O modelo de domínio descreve o negócio e a plataforma executa, com agentes de IA acompanhados por especialistas. Antes de uma ação de alto impacto, a governança Glass Box mostra qual agente pediu, qual regra se aplica e qual é o impacto, e só executa depois de validação humana ou por política. A hospedagem e a escala são gerenciadas.
 
 Provedor de nuvem, modelos de IA, certificações, acordo de nível de serviço e nomes oficiais de módulos não estão publicados. A página também não afirma exclusividade de mercado. Para conversar com a equipe, o caminho é o WhatsApp ou o contato do site.
 
-- [FORGER](https://www.bridgetech.ia.br/forger.html): conceito, tecnologia, modelagem de domínio, infraestrutura, governança e diferenciais.
+- [Ycodify](https://www.bridgetech.ia.br/forger.html): conceito, tecnologia, modelagem de domínio, infraestrutura, governança e diferenciais.
 
 ## Páginas
 - [Início](https://www.bridgetech.ia.br/): apresentação, capacidades e visão geral.
 - [Serviços](https://www.bridgetech.ia.br/servicos.html): detalhamento das seis frentes de serviço.
 - [Sobre](https://www.bridgetech.ia.br/sobre.html): quem somos, princípios e missão.
 - [Cases](https://www.bridgetech.ia.br/cases.html): projetos e indicadores de resultado.
-- [FORGER](https://www.bridgetech.ia.br/forger.html): plataforma de governança de IA da empresa unificada Bridge e Ycodify.
+- [Ycodify](https://www.bridgetech.ia.br/forger.html): plataforma de governança de IA da empresa unificada Bridge e Ycodify.
 - [Contato](https://www.bridgetech.ia.br/contato.html): formulário e canais diretos.
 - [Política de Privacidade](https://www.bridgetech.ia.br/privacidade.html): tratamento de dados pessoais e conformidade com a LGPD.
 
